@@ -1,5 +1,6 @@
 require("lazy_setup")    -- Lazy.nvim設定を読み込み
 require('keymaps')    -- キーマッピング設定を読み込む
+
 -- 基本的な表示設定
 vim.opt.number = true           -- 行番号を表示
 vim.opt.relativenumber = false   -- 相対行番号を表示

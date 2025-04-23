@@ -30,8 +30,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- リーダーキーをカンマに設定
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- lazy.nvimの初期化とプラグイン設定
 require("lazy").setup({
