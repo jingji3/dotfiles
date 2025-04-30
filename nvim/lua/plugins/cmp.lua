@@ -1,6 +1,4 @@
--- lua/plugins/cmp.lua
 -- 補完関連の設定
-
 return {
   -- スニペットエンジン
   {
@@ -40,20 +38,20 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<Up>"] = cmp.mapping.select_prev_item(),
+          ["<Down>"] = cmp.mapping.select_next_item(),
+        
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
             else
-              fallback()
+              fallback() -- EmmetなどのTab機能を呼び出す
             end
           end, { "i", "s" }),
+          
           ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
             else
               fallback()
             end
@@ -98,6 +96,11 @@ return {
         sources = {
           { name = "buffer" },
         },
+      })
+      cmp.setup({
+        mapping = cmp.mapping.preset.insert({
+          ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        }),
       })
     end,
   },

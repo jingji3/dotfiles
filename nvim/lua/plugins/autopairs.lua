@@ -11,6 +11,8 @@ return {
       javascript = { "template_string" },      -- JSのテンプレート文字列内ではペアを無効
       java = false,                            -- Javaでtreesitterチェックを無効
     },
+
+    check_ts = false,
     disable_filetype = {                       -- 自動ペアを無効にするファイルタイプ
       "TelescopePrompt",                      -- Telescopeのプロンプト
       "vim",                                  -- Vimスクリプト

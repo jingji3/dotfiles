@@ -28,7 +28,7 @@ return {
       },
       indent = {
         enable = true,
-        use_treesitter = true,
+        use_treesitter = false,
         chars = { "│" },
         style = {
           { fg = "#404040" },
